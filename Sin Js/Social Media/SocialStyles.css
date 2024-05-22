@@ -1,0 +1,88 @@
+
+:root {
+    --primary-color: hsl(75, 94%, 57%);
+    --light-color: hsl(0, 0%, 100%);
+    --text-color: hsl(0, 0%, 20%);
+    --card-color:hsl(0, 0%, 12%);
+    --background-color: hsl(0, 0%, 8%);
+}
+
+*{
+    font-family: "Inter", sans-serif;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: var(--card-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img {
+    margin-left: 35px;
+    border-radius: 200px;
+    align-self: center;
+}
+
+.card h2 {
+    color: var(--light-color);
+    text-align: center;
+    margin-top: 15px;
+}
+
+.card h5 {
+    margin-top: 6px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.card p {
+    margin-top: 25px;
+    color: hsla(0, 0%, 100%, 0.542);;
+    text-align: center;
+}
+
+.card ul {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card ul button {
+    height: 40px;
+    width: 250px;
+    border-radius: 8px;
+    background-color: var(--text-color);
+    color: var(--light-color);
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+.card ul button:hover{
+    background-color: var(--primary-color);
+    color:var(--text-color);
+    font-weight: 600;
+}
