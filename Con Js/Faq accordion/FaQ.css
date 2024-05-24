@@ -1,10 +1,8 @@
 
-@import url(https://fonts.google.com/specimen/Work+Sans);
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
---tittle-font: url(./assets/fonts/static/WorkSans-Bold.ttf);
---subitittle-font: url(./assets/fonts/static/WorkSans-SemiBold.ttf);
---text-font: url(./assets/fonts/static/WorkSans-Regular.ttf);
+
 --ligth-color: hsl(0, 0%, 100%);
 --background-color: hsl(275, 100%, 97%);
 --secondary-color: hsl(292, 16%, 49%);
@@ -17,49 +15,144 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 /*BODY*/
-
-body{
+body {
     background-color: var(--background-color);
+    font-size: 16px;
 }
 
-/*CONTAINER*/
-
-main{
+.app{
+    min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-.container{
+.app-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 40vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.app-header .bg-img {
+    object-fit: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+/*Container*/
+
+.faq {
     background-color: var(--ligth-color);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 15px -7px rgba(54,54,54,0.58);
+    border-radius: 15px;
+    max-width: 620px;
 }
 
-.title-container{
+.faq-wrapper {
+    padding: 2rem 3rem;
+}
+
+.faq-header {
+    margin-bottom: 2rem;
+}
+
+.faq-title {
     display: flex;
-    flex-direction: row;
+    column-gap: 20px;
+    color: var(--tittle-color);
+    font-family: "Work Sans", sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
 }
 
-.subtittles-con a {
-    font-family: var(--subitittle-font);
-    text-decoration: none;
-    color: black;
+.accordion-title {
+    display: flex;
+    color: var(--tittle-color);
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    transition: 0.1s all ease-in-out;
 }
 
-
-/*status*/
-
-.visible{
-    visibility: visible;
+.accordion-title h3 {
+    font-weight: 700;
 }
 
-.hidden {
-    visibility: hidden;
-    width: 0px;
-    height: 0px;
+.accordion-item:hover .accordion-title {
+    color: var(--secondary-color);
+}
+
+.accordion-item {
+    cursor: pointer;
+}
+
+.accordion-item:not(:first-child) {
+    padding-top: 1rem;
+}
+
+.accordion-item:not(:last-child){
+    border-bottom: 1px solid var(--background-color);
+}
+
+.accordion-item .icon-minus {
+    display: none;
+}
+
+.accordion-item.open .icon-minus {
+    display: block;
+}
+
+.accordion-item.open .icon-plus {
+    display: none;
+}
+
+.accordion-body {
+    font-weight: 400;
+    color: var(--secondary-color);
+    line-height: 1.4rem;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.accordion-item.open .accordion-body {
+    margin-bottom: 2rem;
+    height: fit-content;
+}
+
+@media (max-width: 620px) {
+    .wrapper {
+        padding: 0 5%;
+    }
+
+    .app-header {
+        height: 30vh;
+    }
+
+    .faq-title {
+        font-size: 2rem;
+    }
+
+    .faq-title img {
+        max-width: 32px;
+    }
+
+    .faq-wrapper {
+        padding: 2rem;
+    }
+}
+/*Status*/
+
+.hidden{
+    display: none;
 }
